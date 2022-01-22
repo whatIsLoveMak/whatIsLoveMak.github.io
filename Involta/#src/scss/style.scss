@@ -1,0 +1,186 @@
+    //Миксин для подключения шрифтов
+    @mixin font($font_name, $file_name, $weight, $style) {
+        @font-face {
+            font-family: $font_name;
+            font-display: swap;
+            src: url("../fonts/#{$file_name}.woff") format("woff"),
+            url("../fonts/#{$file_name}.woff2") format("woff2");
+            font-weight: #{$weight};
+            font-style: #{$style};
+        }
+    }
+    
+    // Импорты
+    @import "fonts";
+    @import 'nullstyle';
+    @import 'footer';
+    @import 'headerstyle';
+    body {
+        font-family: "Roboto-Regular", sans-serif;
+    }
+    
+    // Размер шрифтов 
+    html,
+    body {
+        font-size: 10px;
+    }
+    
+    h3 {
+        font-family: "NotoSerif-Bold";
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
+    h4 {
+        font-family: "Philosopher-Bold";
+        font-size: 14px;
+    }
+    
+    p {
+        font-size: 14px;
+        line-height: 20px;
+        color: #7b7b7b;
+    }
+    
+    .container {
+        max-width: 1480px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .disable {
+        display: block;
+        @media (max-width: 1200px) {
+            display: none;
+        }
+    }
+    
+    //-------------------------------------------------------------------------------//
+    //NEWS
+    .news {
+        display: block;
+        padding-top: 50px;
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+    
+    .news-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: 2px solid black;
+        padding: 50px 0px;
+    }
+    
+    .news__item {
+        max-width: 323px;
+        width: 100%;
+        position: relative;
+        transition: all 0.4s ease;
+        @media(max-width: 1024px) {
+            max-width: none;
+        }
+        @media (max-width:768px) {
+            padding-top: 50px;
+        }
+    }
+    
+    .news__item:not(:last-child) {
+        margin-right: 15px;
+        @media(max-width: 768px) {
+            margin-right: 0px;
+        }
+    }
+    
+    .news__item a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+    
+    .news-imagine {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .news-imagine img {
+        width: 100%;
+        transition: all 0.4s ease;
+    }
+    
+    .news-title {
+        padding: 15px 0px 20px 0px;
+        display: flex;
+        align-items: flex-end;
+        color: #b2544f;
+    }
+    
+    .news-subtitle {
+        max-width: 180px;
+        margin-bottom: 20px;
+        transition: all 0.4s ease;
+    }
+    
+    .news-title img {
+        margin-right: 15px;
+    }
+    
+    .date p {
+        color: #9e9e9e;
+    }
+    
+    .news__item:hover {
+        margin-top: -10px;
+    }
+    
+    .news__item:hover .news-imagine img {
+        transform: scale(1.1) rotate(4deg);
+    }
+    
+    .news__item:hover .news-subtitle {
+        color: #7b7b7b;
+    }
+    
+    .news-text {
+        margin-bottom: 15px;
+    }
+    
+    // END NEWS
+    //------------------------------------------------------------------------------------//
+    //NEWS-SLIDER
+    .news-slider {
+        display: none;
+        padding-top: 50px;
+        @media(max-width: 1024px) {
+            display: block;
+        }
+        @media(max-width:768px) {
+            display: none;
+        }
+    }
+    
+    .slick-track {
+        display: flex;
+    }
+    
+    .slick-list {
+        overflow: hidden;
+    }
+    
+    //--------------------------------------------------------------------------------//
+    //NEWS MOBILE
+    .news-mobile {
+        display: none;
+        padding-top: 50px;
+        @media(max-width: 768px) {
+            display: block;
+        }
+    }
+    
+    .mobile-slider {
+        border-top: 2px solid black;
+    }
